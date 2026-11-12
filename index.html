@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bawal Basha</title>
+  <meta name="description" content="Bawal Basha: the unofficial dictionary of college slang.">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Caveat:wght@500;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- background doodles are added here by script.js -->
+  <div class="doodles" id="doodles"></div>
+
+  <div class="page" id="page">
+
+    <!-- navbar -->
+    <nav class="nav">
+      <a class="logo" href="#top">🎓 Bawal Basha</a>
+      <div class="nav-links">
+        <a href="#words">Words</a>
+        <a href="#fame">Hall of fame</a>
+        <a href="#add">Add yours</a>
+      </div>
+    </nav>
+
+    <!-- hero section -->
+    <header class="hero" id="top">
+      <div class="banner-wrap"><div class="banner">
+        <p class="kicker">the unofficial dictionary of</p>
+        <h1 class="logo-title" aria-label="Bawal Basha">
+          <span>B</span><span>a</span><span>w</span><span>a</span><span>l</span>
+          <span class="space"></span>
+          <span>B</span><span>a</span><span>s</span><span>h</span><span>a</span>
+        </h1>
+        <p class="tagline">College slang, explained by the ones who survived lectures, labs and last-bench life. 🫶🏻</p>
+
+        <label class="bigsearch"><input id="search" class="bigsearch-input" type="search" placeholder="🔍  try lafda, tea, maggi..." autocomplete="off"></label>
+        <p class="note">type any word, we search the meaning too</p>
+      </div></div>
+
+      <div class="friends" id="friends"></div>
+    </header>
+
+    <!-- numbers -->
+    <div class="stats" id="stats"></div>
+
+    <!-- word of the day and hall of fame -->
+    <section class="duo">
+      <div id="wotd"></div>
+
+      <aside class="paper fame" id="fame">
+        <h2 class="sec-title">Hall of fame 🏆</h2>
+        <p class="sec-note">most loved words, voted by you</p>
+        <ol class="fame-list" id="fame-list"></ol>
+      </aside>
+    </section>
+
+    <!-- all words -->
+    <section id="words">
+      <h2 class="sec-title">All the words 📖</h2>
+      <p class="sec-note">pick a vibe, search, or just scroll and laugh</p>
+
+      <div class="paper filters">
+        <div>
+          <h3 class="flabel">Pick a category</h3>
+          <div class="chips" id="cat-chips"></div>
+        </div>
+        <div>
+          <h3 class="flabel">How savage?</h3>
+          <div class="chips" id="int-chips"></div>
+        </div>
+        <div class="frow">
+          <label class="sort">Sort by
+            <select id="sort">
+              <option value="az">A to Z</option>
+              <option value="likes">Most loved</option>
+              <option value="intensity">Most savage</option>
+            </select>
+          </label>
+          <p class="count" id="count"></p>
+        </div>
+      </div>
+
+      <div class="grid" id="list"></div>
+    </section>
+
+    <!-- add / edit form -->
+    <section id="add" class="add-wrap">
+      <div class="paper notebook">
+        <h2 class="sec-title" id="form-title">Add your own slang ✍️</h2>
+        <p class="sec-note">your college, your rules, your dictionary</p>
+
+        <form id="form" autocomplete="off">
+          <label>The word
+            <input id="f-term" type="text" placeholder="e.g. rizz" maxlength="40" required>
+          </label>
+          <label>Emoji <span class="opt">(optional)</span>
+            <input id="f-emoji" type="text" placeholder="e.g. 😎" maxlength="8">
+          </label>
+          <label>What does it mean?
+            <input id="f-meaning" type="text" placeholder="explain it like you would to a fresher" maxlength="160" required>
+          </label>
+          <label>Example sentence <span class="opt">(optional, crazier the better)</span>
+            <input id="f-example" type="text" placeholder="bhai, prof ne attendance li aur proxy wala ghost nikla 💀" maxlength="200">
+          </label>
+          <label>Category
+            <select id="f-category"></select>
+          </label>
+
+          <fieldset class="pick">
+            <legend>How savage is it?</legend>
+            <label class="pick-mild" style="--c:var(--lime)"><input type="radio" name="f-int" value="1" checked><span>😌 Mild</span></label>
+            <label class="pick-savage" style="--c:var(--yellow)"><input type="radio" name="f-int" value="2"><span>😈 Savage</span></label>
+            <label class="pick-unhinged" style="--c:var(--pink)"><input type="radio" name="f-int" value="3"><span>💀 Unhinged</span></label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button class="btn" id="f-submit" type="submit">Stick it in 📌</button>
+            <button class="btn ghost" id="f-cancel" type="button" hidden>Cancel</button>
+          </div>
+          <p class="msg" id="msg"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+      <p class="hand-line">made with maggi, chai and zero sleep ☕</p>
+      <p class="small">Not affiliated with any professor, principal or attendance register. Words and likes are saved on this device only.</p>
+      <button class="link" id="reset" type="button">Reset to the starter 30</button>
+    </footer>
+
+  </div>
+
+  <button class="fab" id="fab" type="button">＋ add a word</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
